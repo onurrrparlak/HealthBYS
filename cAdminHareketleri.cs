@@ -48,7 +48,6 @@ namespace HealthBYS
         public bool AdminActionSave(cAdminHareketleri aH)
         {
             bool result = false;
-
             
             SqlConnection con = new SqlConnection(gnl.conString);
             SqlCommand cmd = new SqlCommand("INSERT INTO adminhareketleri(adminID,islem,tarih) VALUES (@adminID,@islem,@tarih) ", con);
