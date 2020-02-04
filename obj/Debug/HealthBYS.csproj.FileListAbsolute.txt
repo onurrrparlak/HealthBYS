@@ -1,0 +1,9 @@
+C:\Users\SWONEY\source\repos\HealthBYS\bin\Debug\HealthBYS.exe.config
+C:\Users\SWONEY\source\repos\HealthBYS\bin\Debug\HealthBYS.exe
+C:\Users\SWONEY\source\repos\HealthBYS\bin\Debug\HealthBYS.pdb
+C:\Users\SWONEY\source\repos\HealthBYS\obj\Debug\HealthBYS.csprojAssemblyReference.cache
+C:\Users\SWONEY\source\repos\HealthBYS\obj\Debug\HealthBYS.frmGiris.resources
+C:\Users\SWONEY\source\repos\HealthBYS\obj\Debug\HealthBYS.Properties.Resources.resources
+C:\Users\SWONEY\source\repos\HealthBYS\obj\Debug\HealthBYS.csproj.GenerateResource.cache
+C:\Users\SWONEY\source\repos\HealthBYS\obj\Debug\HealthBYS.exe
+C:\Users\SWONEY\source\repos\HealthBYS\obj\Debug\HealthBYS.pdb
