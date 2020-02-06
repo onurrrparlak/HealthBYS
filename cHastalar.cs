@@ -151,7 +151,6 @@ namespace HealthBYS
         }
         #endregion Getset
 
-
         public bool hastaVarMi(string tlf)
         {
             bool sonuc = false;
