@@ -11,6 +11,8 @@ namespace HealthBYS
     class cHastalar
     {
         cGenel gnl = new cGenel();
+
+        #region Variables
         private int _hastaId;
         private bool _hastaAktif;
         private string _hastaAdi;
@@ -33,8 +35,10 @@ namespace HealthBYS
         private string _hastaKilo;
         private string _hastaMail;
         private string _hastaKasa;
+        #endregion
 
-       public int hastaId
+        #region Getset
+        public int hastaId
         {
             get { return _hastaId; }
             set { _hastaId = value; }
@@ -145,7 +149,7 @@ namespace HealthBYS
             get { return _hastaKasa; }
             set { _hastaKasa = value; }
         }
-
+        #endregion Getset
 
 
         public bool hastaVarMi(string tlf)
