@@ -12,7 +12,8 @@ namespace HealthBYS
         public string conString = ("SERVER=DESKTOP-UBDKPAB\\SQLEXPRESS; Database=HealthBYS;Trusted_Connection=true");
 
         public static int _adminID;
-        
+        public static int _hastaEkleme;
+        public static int _hastaID;
     
     }
 }
