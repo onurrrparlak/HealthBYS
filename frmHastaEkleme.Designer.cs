@@ -54,9 +54,7 @@
             this.txthastaAd = new System.Windows.Forms.TextBox();
             this.txthastaSoyad = new System.Windows.Forms.TextBox();
             this.txthastaTC = new System.Windows.Forms.TextBox();
-            this.txthastaDG = new System.Windows.Forms.TextBox();
             this.txthastaMeslek = new System.Windows.Forms.TextBox();
-            this.txthastaKan = new System.Windows.Forms.TextBox();
             this.txttxtTelNo = new System.Windows.Forms.TextBox();
             this.txthastaIl = new System.Windows.Forms.TextBox();
             this.txthastaIlce = new System.Windows.Forms.TextBox();
@@ -66,12 +64,14 @@
             this.txthastaBaba = new System.Windows.Forms.TextBox();
             this.txthastaAnne = new System.Windows.Forms.TextBox();
             this.txthastaDgyeri = new System.Windows.Forms.TextBox();
-            this.txthastaCinsiyet = new System.Windows.Forms.TextBox();
             this.txthastaBoy = new System.Windows.Forms.TextBox();
             this.txthastaKilo = new System.Windows.Forms.TextBox();
             this.txthastaKasa = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txthastaMail = new System.Windows.Forms.TextBox();
+            this.txthastaDG = new System.Windows.Forms.MaskedTextBox();
+            this.txthastaKan = new System.Windows.Forms.ComboBox();
+            this.txthastaCinsiyet = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -92,6 +92,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "İptal";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -250,11 +251,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(295, 162);
+            this.label18.Location = new System.Drawing.Point(270, 165);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(28, 13);
+            this.label18.Size = new System.Drawing.Size(53, 13);
             this.label18.TabIndex = 19;
-            this.label18.Text = "Boy:";
+            this.label18.Text = "Boy (CM):";
             // 
             // label19
             // 
@@ -268,7 +269,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(252, 239);
+            this.label20.Location = new System.Drawing.Point(252, 246);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(70, 13);
             this.label20.TabIndex = 21;
@@ -299,16 +300,12 @@
             // txthastaTC
             // 
             this.txthastaTC.Location = new System.Drawing.Point(88, 135);
+            this.txthastaTC.MaxLength = 11;
             this.txthastaTC.Name = "txthastaTC";
             this.txthastaTC.Size = new System.Drawing.Size(162, 20);
             this.txthastaTC.TabIndex = 25;
-            // 
-            // txthastaDG
-            // 
-            this.txthastaDG.Location = new System.Drawing.Point(88, 162);
-            this.txthastaDG.Name = "txthastaDG";
-            this.txthastaDG.Size = new System.Drawing.Size(162, 20);
-            this.txthastaDG.TabIndex = 26;
+            this.txthastaTC.TextChanged += new System.EventHandler(this.txthastaTC_TextChanged);
+            this.txthastaTC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txthastaTC_KeyPress);
             // 
             // txthastaMeslek
             // 
@@ -317,16 +314,10 @@
             this.txthastaMeslek.Size = new System.Drawing.Size(162, 20);
             this.txthastaMeslek.TabIndex = 27;
             // 
-            // txthastaKan
-            // 
-            this.txthastaKan.Location = new System.Drawing.Point(88, 214);
-            this.txthastaKan.Name = "txthastaKan";
-            this.txthastaKan.Size = new System.Drawing.Size(162, 20);
-            this.txthastaKan.TabIndex = 28;
-            // 
             // txttxtTelNo
             // 
             this.txttxtTelNo.Location = new System.Drawing.Point(88, 243);
+            this.txttxtTelNo.MaxLength = 11;
             this.txttxtTelNo.Name = "txttxtTelNo";
             this.txttxtTelNo.Size = new System.Drawing.Size(162, 20);
             this.txttxtTelNo.TabIndex = 29;
@@ -388,30 +379,27 @@
             this.txthastaDgyeri.Size = new System.Drawing.Size(162, 20);
             this.txthastaDgyeri.TabIndex = 37;
             // 
-            // txthastaCinsiyet
-            // 
-            this.txthastaCinsiyet.Location = new System.Drawing.Point(329, 135);
-            this.txthastaCinsiyet.Name = "txthastaCinsiyet";
-            this.txthastaCinsiyet.Size = new System.Drawing.Size(162, 20);
-            this.txthastaCinsiyet.TabIndex = 38;
-            // 
             // txthastaBoy
             // 
             this.txthastaBoy.Location = new System.Drawing.Point(329, 162);
+            this.txthastaBoy.MaxLength = 3;
             this.txthastaBoy.Name = "txthastaBoy";
             this.txthastaBoy.Size = new System.Drawing.Size(162, 20);
             this.txthastaBoy.TabIndex = 39;
+            this.txthastaBoy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txthastaBoy_KeyPress);
             // 
             // txthastaKilo
             // 
             this.txthastaKilo.Location = new System.Drawing.Point(329, 188);
+            this.txthastaKilo.MaxLength = 3;
             this.txthastaKilo.Name = "txthastaKilo";
             this.txthastaKilo.Size = new System.Drawing.Size(162, 20);
             this.txthastaKilo.TabIndex = 40;
+            this.txthastaKilo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txthastaKilo_KeyPress);
             // 
             // txthastaKasa
             // 
-            this.txthastaKasa.Location = new System.Drawing.Point(329, 239);
+            this.txthastaKasa.Location = new System.Drawing.Point(329, 243);
             this.txthastaKasa.Name = "txthastaKasa";
             this.txthastaKasa.Size = new System.Drawing.Size(162, 20);
             this.txthastaKasa.TabIndex = 41;
@@ -432,17 +420,60 @@
             this.txthastaMail.Size = new System.Drawing.Size(162, 20);
             this.txthastaMail.TabIndex = 43;
             // 
+            // txthastaDG
+            // 
+            this.txthastaDG.BeepOnError = true;
+            this.txthastaDG.Location = new System.Drawing.Point(88, 161);
+            this.txthastaDG.Mask = "00/00/0000";
+            this.txthastaDG.Name = "txthastaDG";
+            this.txthastaDG.Size = new System.Drawing.Size(162, 20);
+            this.txthastaDG.TabIndex = 44;
+            this.txthastaDG.ValidatingType = typeof(System.DateTime);
+            this.txthastaDG.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txthastaDG_MaskInputRejected);
+            // 
+            // txthastaKan
+            // 
+            this.txthastaKan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txthastaKan.FormattingEnabled = true;
+            this.txthastaKan.Items.AddRange(new object[] {
+            "0-",
+            "0+",
+            "A-",
+            "A+",
+            "B-",
+            "B+",
+            "AB-",
+            "AB+"});
+            this.txthastaKan.Location = new System.Drawing.Point(88, 211);
+            this.txthastaKan.Name = "txthastaKan";
+            this.txthastaKan.Size = new System.Drawing.Size(162, 21);
+            this.txthastaKan.TabIndex = 45;
+            // 
+            // txthastaCinsiyet
+            // 
+            this.txthastaCinsiyet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txthastaCinsiyet.FormattingEnabled = true;
+            this.txthastaCinsiyet.Items.AddRange(new object[] {
+            "Erkek",
+            "Kadın"});
+            this.txthastaCinsiyet.Location = new System.Drawing.Point(329, 135);
+            this.txthastaCinsiyet.Name = "txthastaCinsiyet";
+            this.txthastaCinsiyet.Size = new System.Drawing.Size(162, 21);
+            this.txthastaCinsiyet.TabIndex = 46;
+            // 
             // frmHastaEkleme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 493);
+            this.Controls.Add(this.txthastaCinsiyet);
+            this.Controls.Add(this.txthastaKan);
+            this.Controls.Add(this.txthastaDG);
             this.Controls.Add(this.txthastaMail);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.txthastaKasa);
             this.Controls.Add(this.txthastaKilo);
             this.Controls.Add(this.txthastaBoy);
-            this.Controls.Add(this.txthastaCinsiyet);
             this.Controls.Add(this.txthastaDgyeri);
             this.Controls.Add(this.txthastaAnne);
             this.Controls.Add(this.txthastaBaba);
@@ -452,9 +483,7 @@
             this.Controls.Add(this.txthastaIlce);
             this.Controls.Add(this.txthastaIl);
             this.Controls.Add(this.txttxtTelNo);
-            this.Controls.Add(this.txthastaKan);
             this.Controls.Add(this.txthastaMeslek);
-            this.Controls.Add(this.txthastaDG);
             this.Controls.Add(this.txthastaTC);
             this.Controls.Add(this.txthastaSoyad);
             this.Controls.Add(this.txthastaAd);
@@ -482,7 +511,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "frmHastaEkleme";
-            this.Text = "HastaEkleme";
+            this.Text = "Hasta Bilgileri";
+            this.Load += new System.EventHandler(this.frmHastaEkleme_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,9 +546,7 @@
         private System.Windows.Forms.TextBox txthastaAd;
         private System.Windows.Forms.TextBox txthastaSoyad;
         private System.Windows.Forms.TextBox txthastaTC;
-        private System.Windows.Forms.TextBox txthastaDG;
         private System.Windows.Forms.TextBox txthastaMeslek;
-        private System.Windows.Forms.TextBox txthastaKan;
         private System.Windows.Forms.TextBox txttxtTelNo;
         private System.Windows.Forms.TextBox txthastaIl;
         private System.Windows.Forms.TextBox txthastaIlce;
@@ -528,11 +556,13 @@
         private System.Windows.Forms.TextBox txthastaBaba;
         private System.Windows.Forms.TextBox txthastaAnne;
         private System.Windows.Forms.TextBox txthastaDgyeri;
-        private System.Windows.Forms.TextBox txthastaCinsiyet;
         private System.Windows.Forms.TextBox txthastaBoy;
         private System.Windows.Forms.TextBox txthastaKilo;
         private System.Windows.Forms.TextBox txthastaKasa;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txthastaMail;
+        private System.Windows.Forms.MaskedTextBox txthastaDG;
+        private System.Windows.Forms.ComboBox txthastaKan;
+        private System.Windows.Forms.ComboBox txthastaCinsiyet;
     }
 }
