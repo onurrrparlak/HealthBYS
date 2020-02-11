@@ -17,6 +17,7 @@ namespace HealthBYS
             InitializeComponent();
         }
 
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -36,10 +37,13 @@ namespace HealthBYS
 
         private void btnYeniHastaKayit_Click(object sender, EventArgs e)
         {
-          
+
+            cGenel._hastaID = 0;
+
             frmHastaEkleme m = new frmHastaEkleme();
             cGenel._hastaEkleme = 1;
             m.Show();
+            this.Close();
         }
 
         private void frmHastalar_Load(object sender, EventArgs e)
@@ -57,9 +61,28 @@ namespace HealthBYS
                 cGenel._hastaEkleme = 1;
                 cGenel._hastaID = Convert.ToInt32(lvHastalar.SelectedItems[0].SubItems[0].Text);
 
-                
+
                 
                 frm.Show();
+                this.Close();
+            }else
+            {
+                MessageBox.Show("Düzenlenecek Hasta Seçiniz");
+            }
+        }
+
+        private void lvHastalar_DoubleClick(object sender, EventArgs e)
+        {
+            if (lvHastalar.SelectedItems.Count > 0)
+            {
+                frmHastaEkleme frm = new frmHastaEkleme();
+                cGenel._hastaEkleme = 1;
+                cGenel._hastaID = Convert.ToInt32(lvHastalar.SelectedItems[0].SubItems[0].Text);
+
+
+
+                frm.Show();
+                this.Close();
             }
         }
     }

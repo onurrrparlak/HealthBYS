@@ -177,6 +177,7 @@
             this.lvHastalar.TabIndex = 6;
             this.lvHastalar.UseCompatibleStateImageBehavior = false;
             this.lvHastalar.View = System.Windows.Forms.View.Details;
+            this.lvHastalar.DoubleClick += new System.EventHandler(this.lvHastalar_DoubleClick);
             // 
             // columnHeader1
             // 
